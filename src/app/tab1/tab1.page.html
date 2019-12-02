@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      LifeStyle
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-buttons fill="clear" slot="end" (click)="hideNshowSearchBarFun(false)">
+			<ion-button fill="outline" color="white">
+				<ion-icon name="ios-close-circle"></ion-icon>
+			</ion-button>
+		</ion-buttons> --> 
+    <!-- <ion-searchbar placeholder="Search product"></ion-searchbar> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides #mySlider pager="true" [options]="sliderOpts">
+      <ion-slide>
+        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider1.jpg" style="min-height: 200px;height: 200px;"></a>
+      </ion-slide>
+      <ion-slide>
+        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider2.jpg" style="min-height: 200px;height: 200px;"></a>
+      </ion-slide>
+      <ion-slide>
+        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider3.jpg" style="min-height: 200px;height: 200px;"></a>
+      </ion-slide>
+      <ion-slide>
+        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider4.jpg" style="min-height: 200px;height: 200px;"></a>
+      </ion-slide>
+  </ion-slides>
+
+  <div style="display: flex;overflow: auto;">
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens1.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens2.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens3.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens4.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens5.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+    <ion-thumbnail slot="start" style="height: 150px;width: 345px;margin: 5px;box-shadow: 0px 0px 0.5px 0px #b0aaaa;">
+      <img src="assets/Mens/mens6.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-thumbnail>
+  </div>
+
+  <ion-item lines="none">
+    <ion-label>
+      FASHION
+    </ion-label>
+  </ion-item>
+
+  <span style="display:flex;">
+    <div style='width:50%;'>
+      <span style="padding: 40px;display: block;min-height: 50%;">
+        <ion-thumbnail slot="start" style="height:150px;margin: 0px;">
+          <img src="assets/Mens/mens7.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+        </ion-thumbnail>
+      </span>
+      <span  style="padding: 40px;display: block;min-height: 50%;">
+        <ion-thumbnail slot="start" style="height:150px;margin: 0px;">
+          <img src="assets/Mens/mens8.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+        </ion-thumbnail>
+      </span>
+    </div>
+    <div>
+      <span style="padding: 40px;display: block;min-height: 50%;">
+        <ion-thumbnail slot="start" style="height:150px;margin: 0px;">
+          <img src="assets/Mens/mens9.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+        </ion-thumbnail>
+      </span>
+      <span style="padding: 40px;display: block;min-height: 50%;">
+        <ion-thumbnail slot="start" style="height:150px;margin: 0px;">
+          <img src="assets/Mens/mens10.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+        </ion-thumbnail>
+      </span>
+    </div>
+  </span>
+
+  <ion-item lines="none">
+    <ion-label>
+      Category
+    </ion-label>
+  </ion-item>
+
+  <div style="display: flex;overflow: auto;">
+    <ion-avatar slot="start" style="height: 90px;width: 80px;">
+      <img src="assets/icon/Tshirts-icon.jpeg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-avatar>
+    <ion-avatar slot="start" style="height: 90px;width: 80px;">
+      <img src="assets/icon/Shirts-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-avatar>
+    <ion-avatar slot="start" style="height: 90px;width: 80px;">
+      <img src="assets/icon/Jeans-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-avatar>
+    <ion-avatar slot="start" style="height: 90px;width: 80px;">
+      <img src="assets/icon/Watches-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-avatar>
+    <ion-avatar slot="start" style="height: 90px;width: 80px;">
+      <img src="assets/icon/Jackets-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+    </ion-avatar>
+  </div>
+
+</ion-content>
