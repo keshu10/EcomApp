@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, ModalController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -12,9 +12,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public navigate : any;
   constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private platform     : Platform,
+    private splashScreen : SplashScreen,
+    private statusBar    : StatusBar,
+    public  modalCtrl    : ModalController,
+    private menu         : MenuController
   ) {
     this.sideMenu();
     this.initializeApp();
@@ -47,5 +49,9 @@ export class AppComponent {
         icon  : "contacts"
       },
     ]
+  }
+
+  closeEnd() {
+    this.menu.close();
   }
 }

@@ -20,6 +20,8 @@ export class Tab1Page implements OnInit {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+	  var self = this;
+  }
 
 }

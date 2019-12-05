@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="new-background-color">
       <ion-buttons slot="start">
         <ion-menu-button autoHide="false"></ion-menu-button>
       </ion-buttons>
@@ -7,4 +7,25 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <!-- <span>
+    <span>
+      <ion-item-divider>
+        Mens
+         <ion-icon item-right name="md-arrow-dropright" color="grey" *ngIf="!showThisCateg[i]"></ion-icon>
+        <ion-icon item-right name="md-arrow-dropdown" color="grey"></ion-icon>
+      </ion-item-divider>
+      <ion-item-divider color="white" text-capitalize >
+        Women
+        <ion-icon item-right name="md-arrow-dropright" color="grey"></ion-icon>
+      </ion-item-divider>
+      <span>
+        <div ion-item color="white">
+          <img [src]="subCategory.imageURL" class="categ-list-icon" item-left>
+          <span [innerHTML]="subCategory.subCategoryTitle" color="dark" class="boldIt upperCase titleText" 
+          text-capitalize padding-vertical></span>
+        </div>
+      </span>
+    </span>
+  </span> -->
+</ion-content>
