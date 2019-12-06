@@ -31,24 +31,24 @@ export class AppComponent {
 
   sideMenu()
   {
-    this.navigate =
-    [
-      {
-        title : "Home",
-        url   : "/tabs/tab1",
-        icon  : "home"
-      },
-      {
-        title : "Categories",
-        url   : "/tabs/tab2",
-        icon  : "apps"
-      },
-      {
-        title : "Contacts",
-        url   : "/tabs/tab3",
-        icon  : "contacts"
-      },
-    ]
+    // this.navigate =
+    // [
+    //   {
+    //     title : "Home",
+    //     url   : "/tabs/tab1",
+    //     icon  : "home"
+    //   },
+    //   {
+    //     title : "Categories",
+    //     url   : "/tabs/tab2",
+    //     icon  : "apps"
+    //   },
+    //   {
+    //     title : "Contacts",
+    //     url   : "/tabs/tab3",
+    //     icon  : "contacts"
+    //   },
+    // ]
   }
 
   closeEnd() {

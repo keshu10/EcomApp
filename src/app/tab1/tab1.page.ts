@@ -1,5 +1,6 @@
 import { Component,ViewChild,OnInit } from '@angular/core';
-import {IonSlides}          from '@ionic/angular';
+import {IonSlides,NavController}          from '@ionic/angular';
+import { Router, ActivatedRoute, NavigationExtras}     from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -16,12 +17,17 @@ export class Tab1Page implements OnInit {
 		  maxRatio: 5
 		}
 	};
-  constructor() {
+  constructor(private router        : Router,
+			public route         : ActivatedRoute,
+			public nav : NavController) {
 
   }
 
   ngOnInit() {
-	  var self = this;
+  }
+
+  showProducts(){
+	this.nav.navigateForward('/all-products');
   }
 
 }

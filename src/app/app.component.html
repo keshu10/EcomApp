@@ -1,6 +1,6 @@
 <ion-app>
     <ion-menu contentId="content1" side="start">
-      <ion-button (click) ="closeEnd()" color="light" fill="clear" style="margin-left: 320px;margin-top: 20px;">
+      <ion-button (click) ="closeEnd()" color="light" fill="clear" style="margin-left: 320px;margin-top: 10px;">
           <ion-icon slot="icon-only" name="close" color="dark"></ion-icon>
       </ion-button>
       <ion-item lines ="none" style="margin-left: 30%;">
@@ -9,14 +9,107 @@
         </ion-thumbnail>
       </ion-item>
       <ion-content>
-        <ion-list *ngFor="let pages of navigate">
+        <!-- <ion-list *ngFor="let pages of navigate">
         <ion-menu-toggle auto-hide="true">
           <ion-item lines="none" [routerLink]="pages.url" routerDirection="forward">
               <ion-icon [name]="pages.icon" slot="start"></ion-icon>
                  {{pages.title}} 
           </ion-item>
         </ion-menu-toggle>
-        </ion-list>
+        </ion-list> -->
+        <span>
+          <span>
+            <ion-item-divider lines="none">
+              <ion-label>
+                Fashion
+                <ion-icon slot="end" name="md-arrow-dropdown" color="dark"></ion-icon>
+              </ion-label>
+            </ion-item-divider>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Mens Fashion
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Women's Fashion
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Jewellary
+                </ion-label>
+              </ion-item>
+            </span>
+            <ion-item-divider lines="none">
+              <ion-label>
+                Mobiles & Electronics
+                <ion-icon slot="end" name="md-arrow-dropdown" color="dark"></ion-icon>
+              </ion-label>
+            </ion-item-divider>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Mobile Phones
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Mobiles Accessories
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Laptops & Computers
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Cases & Covers
+                </ion-label>
+              </ion-item>
+            </span>
+            <ion-item-divider lines="none">
+              <ion-label>
+                Home & Living
+                <ion-icon slot="end" name="md-arrow-dropdown" color="dark"></ion-icon>
+              </ion-label>
+            </ion-item-divider>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Kitchenware
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Home Furnishing
+                </ion-label>
+              </ion-item>
+            </span>
+            <span>
+              <ion-item color="white" lines="none">
+                <ion-label color="dark">
+                  Furniture
+                </ion-label>
+              </ion-item>
+            </span>
+          </span>
+
+        </span>
       </ion-content>
       <ion-footer style="background: #f1f0f0;">
         <ion-grid>
