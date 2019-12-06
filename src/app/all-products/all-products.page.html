@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar class="new-background-color">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -13,8 +13,39 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-searchbar placeholder="What are you looking for?"></ion-searchbar>
 </ion-header>
 
 <ion-content>
+  <ion-item lines="none">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="options" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="list-box" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="funnel" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
 
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <img src="assets/Mens/mens8.jpg">
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <img src="assets/Mens/mens8.jpg">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
