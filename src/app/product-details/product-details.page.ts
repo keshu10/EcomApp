@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {IonSlides,NavController}          from '@ionic/angular';
+import { Router, ActivatedRoute, NavigationExtras}     from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-details.page.scss'],
 })
 export class ProductDetailsPage implements OnInit {
-
+  @ViewChild('mySlider',{static:true}) slider: IonSlides;
   constructor() { }
 
   ngOnInit() {
   }
-
+ 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IonSlides,NavController}          from '@ionic/angular';
+import { Router, ActivatedRoute, NavigationExtras}     from '@angular/router';
 
 @Component({
   selector: 'app-all-products',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProductsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router        : Router,
+              public route         : ActivatedRoute,
+              public nav : NavController) { }
 
   ngOnInit() {
+  }
+
+  productDetails(){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        productObject : 'best of best'
+      }
+    };
+    this.router.navigate(['product-details'], navigationExtras);
   }
 
 }

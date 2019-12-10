@@ -1,9 +1,196 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product-details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+        T-Shirt With Logo
+      <!-- by Categorywise -->
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="share" color="dark"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-slides #mySlider pager="true">
+    <ion-slide>
+      <img src="assets/Mdetails/Mdetails1.jpg" style="height: 480px;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/Mdetails/Mdetails2.jpg" style="height: 480px;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/Mdetails/Mdetails3.jpg" style="height: 480px;">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/Mdetails/Mdetails4.jpg" style="height: 480px;">
+    </ion-slide>
+  </ion-slides>
+  <ion-item lines="none">
+    <ion-label>
+      Billion
+    </ion-label>
+  </ion-item>
+    <ion-label style="margin-left: 15px;">
+      Full Sleeve Ombre Men Sweatshirt
+    </ion-label>
+  <ion-item lines="none">
+    <ion-button fill="clear" size="small" color="success">
+      Best price
+    </ion-button>
+  </ion-item>
+  <ion-title>
+    <ion-label class="fa fa-rupee"> 600
+      <del>1550</del>
+    </ion-label>
+    <ion-label color="success" size="small">  62% off</ion-label>
+  </ion-title>
+  <ion-item>
+    <ion-chip style="--background:green;">
+      <ion-label color="light">5</ion-label>
+      <ion-icon name="star" color="light"></ion-icon>
+    </ion-chip>
+    <ion-label>
+      10 ratings
+    </ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Colors :-</ion-card-subtitle>
+    </ion-card-header>
+    <div style="display: flex;overflow: auto;">
+      <ion-avatar slot="start" style="height: 72px;width: 80px;">
+        <img src="assets/icon/Tshirts-icon.jpeg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+      <ion-avatar slot="start" style="height:72px;width: 80px;">
+        <img src="assets/icon/Shirts-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+      <ion-avatar slot="start" style="height: 72px;width: 80px;">
+        <img src="assets/icon/Jeans-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+      <ion-avatar slot="start" style="height: 72px;width: 80px;">
+        <img src="assets/icon/Watches-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+      <ion-avatar slot="start" style="height: 72px;width: 80px;">
+        <img src="assets/icon/Jackets-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+      <ion-avatar slot="start" style="height:72px;width: 80px;">
+          <img src="assets/icon/Shirts-icon.jpg" style="max-width: 100px; width: auto;padding: 5px;">
+      </ion-avatar>
+    </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Size :-</ion-card-subtitle>
+    </ion-card-header>
+    <div style="display: flex;overflow: auto;">
+      <div class="box-size">
+        S
+      </div>
+      <div class="box-size">
+        M
+      </div>
+      <div class="box-size">
+        L
+      </div>
+      <div class="box-size">
+        XL
+      </div>
+      <div class="box-size">
+        2XL
+      </div>
+      <div class="box-size">
+        3XL
+      </div>
+    </div>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Product Details</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>Color</div>
+        </ion-col>
+        <ion-col>
+          <div>Black</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Fabric</div>
+        </ion-col>
+        <ion-col>
+          <div>Cotton Blend</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Pattern</div>
+        </ion-col>
+        <ion-col>
+          <div>Solid</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Neck</div>
+        </ion-col>
+        <ion-col>
+          <div>Hooded neck</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>Sleeve</div>
+        </ion-col>
+        <ion-col>
+          <div>Full Sleeve</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ratings & Reviews</ion-card-title>
+      </ion-card-header>
+      <ion-item>
+        <ion-chip style="--background:green;">
+          <ion-label color="light">5</ion-label>
+          <ion-icon name="star" color="light"></ion-icon>
+        </ion-chip>
+        <ion-label>
+          50 ratings and 20 reviews
+        </ion-label>
+      </ion-item>
+  </ion-card>
+
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="light" size="small">
+          ADD TO CART
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" size="small" style="--background: orangered;">
+          BUY NOW
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+
+
