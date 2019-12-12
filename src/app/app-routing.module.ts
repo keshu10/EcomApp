@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'product-details',
     loadChildren: () => import('./product-details/product-details.module').then( m => m.ProductDetailsPageModule)
+  },
+  {
+    path: 'view-cart',
+    loadChildren: () => import('./view-cart/view-cart.module').then( m => m.ViewCartPageModule)
+  },
+  {
+    path: 'check-out-order',
+    loadChildren: () => import('./check-out-order/check-out-order.module').then( m => m.CheckOutOrderPageModule)
   }
 ];
 @NgModule({

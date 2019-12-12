@@ -92,22 +92,34 @@
     </ion-card-header>
     <div style="display: flex;overflow: auto;">
       <div class="box-size">
-        S
+        <span class="box-center">
+          S
+        </span>
       </div>
       <div class="box-size">
-        M
+        <span class="box-center">
+          M
+        </span>
       </div>
       <div class="box-size">
-        L
+        <span class="box-center">
+          L
+        </span>
       </div>
       <div class="box-size">
-        XL
+        <span class="box-center">
+          XL
+        </span>
       </div>
       <div class="box-size">
-        2XL
+        <span class="box-center">
+          2XL
+        </span>
       </div>
       <div class="box-size">
-        3XL
+        <span class="box-center">
+          3XL
+        </span>
       </div>
     </div>
   </ion-card>
@@ -160,18 +172,138 @@
   </ion-card>
 
   <ion-card>
-      <ion-card-header>
-        <ion-card-title>Ratings & Reviews</ion-card-title>
-      </ion-card-header>
-      <ion-item>
-        <ion-chip style="--background:green;">
-          <ion-label color="light">5</ion-label>
-          <ion-icon name="star" color="light"></ion-icon>
-        </ion-chip>
-        <ion-label>
-          50 ratings and 20 reviews
-        </ion-label>
+    <ion-card-header>
+      <ion-item lines="none">
+        <ion-label>Ratings & Reviews</ion-label>
+        <ion-button fill="outline" slot="end" color="dark">Rate Product</ion-button>
       </ion-item>
+    </ion-card-header>
+    <ion-item>
+      <ion-chip style="--background:green;">
+        <ion-label color="light">5</ion-label>
+        <ion-icon name="star" color="light"></ion-icon>
+      </ion-chip>
+      <ion-label>
+        50 ratings and 20 reviews
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-chip style="--background:green;height: 22px;width: 50px; margin-bottom: 60px;" size="small">
+        <ion-label color="light">5</ion-label>
+        <ion-icon name="star" color="light" size="small"></ion-icon>
+      </ion-chip>
+      <ion-label style="margin-inline-start: 10px; margin-top: 10px;">
+        <!-- Worth the money
+      </ion-label>
+      <ion-label class="ion-text-wrap">
+        Good Product as well as the design. -->
+      <h6>Worth the money</h6>
+      <p>Good Product as well as the design.</p>
+      <ion-thumbnail>
+        <img src="assets/Mens/mens8.jpg">
+      </ion-thumbnail>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-chip style="--background:green;height: 22px;width: 50px; margin-bottom: 60px;" size="small">
+        <ion-label color="light">5</ion-label>
+        <ion-icon name="star" color="light" size="small"></ion-icon>
+      </ion-chip>
+      <ion-label style="margin-inline-start: 10px; margin-top: 10px;">
+        <!-- Worth the money
+      </ion-label>
+      <ion-label class="ion-text-wrap">
+        Good Product as well as the design. -->
+      <h6>Great Product</h6>
+      <p>Good Product as well as the design.</p>
+      <ion-thumbnail>
+        <img src="assets/Mens/mens8.jpg">
+      </ion-thumbnail>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-chip style="--background:green;height: 22px;width: 50px; margin-bottom: 60px;" size="small">
+        <ion-label color="light">5</ion-label>
+        <ion-icon name="star" color="light" size="small"></ion-icon>
+      </ion-chip>
+      <ion-label style="margin-inline-start: 10px; margin-top: 10px;">
+        <!-- Worth the money
+      </ion-label>
+      <ion-label class="ion-text-wrap">
+        Good Product as well as the design. -->
+      <h6>Awesome product</h6>
+      <p>Good Product as well as the design.</p>
+      <ion-thumbnail>
+        <img src="assets/Mens/mens8.jpg">
+      </ion-thumbnail>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-chip style="--background:green;height: 22px;width: 50px; margin-bottom: 60px;" size="small">
+        <ion-label color="light">5</ion-label>
+        <ion-icon name="star" color="light" size="small"></ion-icon>
+      </ion-chip>
+      <ion-label style="margin-inline-start: 10px; margin-top: 10px;">
+      <h6>Worth the money</h6>
+      <p>Good Product as well as the design.</p>
+      <ion-thumbnail>
+        <img src="assets/Mens/mens8.jpg">
+      </ion-thumbnail>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item lines="none">
+        <ion-label>Similar Products</ion-label>
+        <ion-button fill="outline" slot="end" color="dark">View All</ion-button>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <div style="display: flex;overflow: auto;height: 250px;">
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens3.jpg" style="min-width: 130px;"> 
+          <ion-text>Roadster</ion-text>
+          <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 799</ion-text>
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens8.jpg" style="min-width: 130px;">
+          <ion-text>Roadster</ion-text>
+          <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 899</ion-text> 
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens11.jpg" style="min-width: 130px;">
+          <ion-text>Roadster</ion-text>
+         <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 499</ion-text> 
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens14.jpg" style="min-width: 130px;">
+          <ion-text>Roadster</ion-text>
+          <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 799</ion-text> 
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens15.jpg" style="min-width: 130px;">
+          <ion-text>Roadster</ion-text>
+          <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 999</ion-text> 
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" style="height: 185px;width: 65px;margin: 5px;box-shadow: 0px 0px 2.5px 0px #b0aaaa; margin-right: 80px;">
+          <img src="assets/Mens/mens16.jpg" style="min-width: 130px;">
+          <ion-text>Roadster</ion-text>
+          <!-- <h6>Men Olive Green Solid Hooded Sweatshirt</h6> -->
+          <ion-text> Rs. 899</ion-text> 
+        </ion-thumbnail>
+      </div>
+    </ion-card-content>
   </ion-card>
 
 
@@ -180,12 +312,12 @@
   <ion-toolbar>
     <ion-row>
       <ion-col>
-        <ion-button expand="full" color="light" size="small">
+        <ion-button expand="full" color="light" size="small" (click)="AddCartItem()">
           ADD TO CART
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="full" size="small" style="--background: orangered;">
+        <ion-button expand="full" size="small" style="--background: #e40046;" (click)="checkOutOrder()">
           BUY NOW
         </ion-button>
       </ion-col>
