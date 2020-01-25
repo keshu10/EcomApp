@@ -8,7 +8,7 @@
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon slot="icon-only" name="search" color="dark"></ion-icon>
+        <ion-icon slot="icon-only" name="notifications" color="dark"></ion-icon>
       </ion-button>
       <ion-button (click)="showProducts()">
         <ion-icon slot="icon-only" name="cart" color="dark"></ion-icon>
@@ -64,7 +64,7 @@
     <ion-card-header>
       <ion-item lines="none">
         <ion-label>FASHION</ion-label>
-        <ion-button fill="outline" slot="end" color="dark">View All</ion-button>
+        <ion-button fill="outline" slot="end" color="dark" (click)="showProducts()">View All</ion-button>
       </ion-item>
     </ion-card-header>
 

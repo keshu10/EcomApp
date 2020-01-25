@@ -1,0 +1,40 @@
+<ion-content>
+  <span>
+    <ion-item lines ="none" style="margin-top: 60px; ">
+      <ion-thumbnail slot="start" style="width: 100%; margin: 20px auto; text-align: center;">
+        <img src="assets/icon/Woo-Commerce.png" style="width: 25%;">
+      </ion-thumbnail>
+    </ion-item>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+          <ion-icon name="mail" slot="start" class="text-primary"></ion-icon>
+          Username
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+        <ion-icon name="lock" slot="start" class="text-primary"></ion-icon>
+        Password
+      </ion-label>
+      <ion-input id="password" type="password" [(ngModel)]="password"  name="password" required></ion-input>
+      <ion-icon name="{{conformPasswordIcon}}" slot="end" tappable class="passwordEyeIcon" 
+          (click)="showAndHidePassword($event)">
+      </ion-icon>
+    </ion-item>
+    <div style="margin-bottom: 20px; margin-top: 15px; text-align: right;">
+      <ion-text  value="email" tappable (click)="openLoginPassword(email)" >
+          Forgot Password?
+      </ion-text>
+    </div>
+
+    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="checkUserIsLoggedIn($event)">LOGIN</ion-button>
+    <div style=" text-align: center; margin-top: 20px;">
+      <ion-text>
+        Don't have an account? 
+        <ion-button style="margin-bottom: 14px;" color="danger" fill="clear" tappable (click)="openCreateAccount()">SIGN UP</ion-button>
+      </ion-text>
+    </div>
+  </span>
+</ion-content>

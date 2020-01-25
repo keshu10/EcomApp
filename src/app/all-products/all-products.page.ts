@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IonSlides,NavController}          from '@ionic/angular';
+import {IonSlides,NavController,ModalController}          from '@ionic/angular';
 import { Router, ActivatedRoute, NavigationExtras}     from '@angular/router';
+import { FilterProductPage } from '../filter-product/filter-product.page';
 
 @Component({
   selector: 'app-all-products',
@@ -9,9 +10,11 @@ import { Router, ActivatedRoute, NavigationExtras}     from '@angular/router';
 })
 export class AllProductsPage implements OnInit {
 
+  
   constructor(private router        : Router,
               public route         : ActivatedRoute,
-              public nav : NavController) { }
+              public nav : NavController,
+              public modalController : ModalController) { }
 
   ngOnInit() {
   }
@@ -23,6 +26,13 @@ export class AllProductsPage implements OnInit {
       }
     };
     this.router.navigate(['product-details'], navigationExtras);
+  }
+
+  async openPriceFilterModal() {
+    const modal = await this.modalController.create({
+      component: FilterProductPage
+    });
+    return await modal.present();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, ModalController, MenuController } from '@ionic/angular';
+import { Platform, ModalController, MenuController, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -16,7 +16,8 @@ export class AppComponent {
     private splashScreen : SplashScreen,
     private statusBar    : StatusBar,
     public  modalCtrl    : ModalController,
-    private menu         : MenuController
+    private menu         : MenuController,
+    public navCtrl       : NavController
   ) {
     this.sideMenu();
     this.initializeApp();
@@ -49,6 +50,16 @@ export class AppComponent {
     //     icon  : "contacts"
     //   },
     // ]
+  }
+
+  openHome() {
+    this.navCtrl.navigateForward('tabs/tab1');
+    this.menu.close();
+  }
+
+  loginSignUp() {
+    this.navCtrl.navigateForward('login');
+    this.menu.close();
   }
 
   closeEnd() {

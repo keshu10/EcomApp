@@ -21,6 +21,22 @@ const routes: Routes = [
   {
     path: 'check-out-order',
     loadChildren: () => import('./check-out-order/check-out-order.module').then( m => m.CheckOutOrderPageModule)
+  },
+  {
+    path: 'rate-review',
+    loadChildren: () => import('./rate-review/rate-review.module').then( m => m.RateReviewPageModule)
+  },
+  {
+    path: 'filter-product',
+    loadChildren: () => import('./filter-product/filter-product.module').then( m => m.FilterProductPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'create-account',
+    loadChildren: () => import('./create-account/create-account.module').then( m => m.CreateAccountPageModule)
   }
 ];
 @NgModule({

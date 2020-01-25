@@ -1,0 +1,104 @@
+<ion-content>
+  <span>
+    <ion-item lines ="none" style="margin-top: 60px; ">
+      <ion-thumbnail slot="start" style="width: 100%; margin: 20px auto; text-align: center;">
+        <img src="assets/icon/Woo-Commerce.png" style="width: 25%;">
+      </ion-thumbnail>
+    </ion-item>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+          <ion-icon name="person" slot="start"></ion-icon>
+          Full Name
+          <br><div no-padding class="errMsgLogin" >{{fullNameError}}</div>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="name" required (ionChange)="checkInputValue('name')"></ion-input>
+    </ion-item>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+          <ion-icon name="mail" slot="start" ></ion-icon>
+          Email
+          <br><div no-padding class="errMsgLogin" >{{emailError}}</div>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="email" name="email" required (ionChange)="checkInputValue('email')"></ion-input>
+    </ion-item>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+        <ion-icon name="lock" slot="start"></ion-icon>
+        Password
+        <br><div no-padding class="errMsgLogin" >{{passwordError}}</div>
+      </ion-label>
+      <ion-input id="password" type="password" [(ngModel)]="password"  name="password" required (ionChange)="checkInputValue('password')"></ion-input>
+      <ion-icon name="{{conformPasswordIcon}}" slot="end" tappable class="passwordEyeIcon" 
+          (click)="showAndHidePassword($event)">
+      </ion-icon>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <ion-item>
+            <ion-label position="fixed">
+              <ion-icon name="phone-portrait" color="gray"></ion-icon>
+                Mobile No
+                <br><div no-padding class="errMsgLogin" >{{mobileNoError}}</div>
+            </ion-label>
+            <ion-select interface="action-sheet" [(ngModel)]="countryCode">
+              <ion-select-option value="+91">+91</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        
+        <ion-col width-50>
+          <ion-item lines="full" style="margin: 8px;">
+            <ion-input type="tel"  maxlength="10" [(ngModel)]="mobileNumber" name="mobileNumber" required (ionChange)="checkInputValue('mobileNumber')">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+       </ion-row>
+    </ion-grid>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+          <ion-icon name="locate" slot="start"></ion-icon>
+          Address
+          <br><div no-padding class="errMsgLogin" >{{addressError}}</div>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="address" name="address" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed">
+        <ion-icon name="outlet" slot="start"></ion-icon>
+        State
+        <br><div no-padding class="errMsgLogin" >{{stateError}}</div>
+      </ion-label>
+      <ion-select interface="action-sheet"  [(ngModel)]="selectedUserState">
+        <ion-select-option  value="Madhya Pradesh">Madhya Pradesh</ion-select-option> 
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="remove-line-item">
+      <ion-label position="fixed">
+        <ion-icon name="pin" slot="start"></ion-icon>
+        City
+        <br><div no-padding class="errMsgLogin" >{{cityError}}</div>
+      </ion-label>
+      <ion-select interface="action-sheet" [(ngModel)]="selectedUserCity">
+        <ion-select-option value="Indore">Indore</ion-select-option> 
+      </ion-select>
+    </ion-item>
+
+    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="createAccountConfromation($event)">REGISTER</ion-button>
+    <ion-text>
+      By signing in you agree to our 
+      <ion-button style="margin-bottom: 14px;" size="small" color="dark" fill="clear" tappable (click)="openTermsCondition()">Terms & Conditions</ion-button>
+    </ion-text>
+    <div style=" text-align: center; margin-top: 20px;">
+      <ion-button style="text-transform: capitalize;" color="primary" fill="clear" tappable (click)="loginSignUp()">Already have an account?</ion-button>
+    </div>
+
+  </span>
+</ion-content>

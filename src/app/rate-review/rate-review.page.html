@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-icon style="float:left; font-size:25px; padding-right:10px; padding-left: 16px;" name="close" (click)="close()"></ion-icon>
+    <ion-title>Review Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header style="text-align: center;">
+      <ion-card-title>Add a photo</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content style="text-align: center;">
+      <ion-label>Shoppers find the images </ion-label>
+      <p>More helpful than text </p>
+      <ion-button color="light">
+        <ion-icon slot="start" fill="outline" name="camera"></ion-icon>
+        Add Photo
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/Mdetails/Mdetails1.jpg">
+      </ion-thumbnail>
+      <ion-card-content style="padding: 7px;">
+        <span style="font-size: 12px;">Full Sleeve Ombre Men Sweatshirt</span>
+        <p>
+          <rating [rate]="0"
+            readonly="false" 
+            size="default" 
+            (rateChange)="logRatingChange('',$event)">
+          </rating>
+        </p>
+      </ion-card-content>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add a Review</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea placeholder="Enter more information here..."></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="primary" (click)="submitReview()">
+          Submit
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
