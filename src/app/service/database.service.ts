@@ -12,22 +12,23 @@ export class DatabaseService {
   }
 
   // add a new user to Firestore database collection
-  addEmployee(user: User) {
+  addUser(callback ,user: User) {
     // convert object of type User to JSON object
     // because Firestore understand JSON
     const userObject = {...user};
     return this.firestore.collection('UserCollection').add(userObject);
+    callback(true)
   }
 
     // this method returns list of User document,
   // fetched from Firestore database collection
-  getEmployees() {
+  getUser() {
     return this.firestore.collection('UserCollection').snapshotChanges();
   }
 
     // this method takes an User object and
   // update an object of User to the Firestore document
-  updateEmployee(user: User) {
+  updateUser(user: User) {
     // convert object of type User to JSON object
     // because Firestore understand JSON
     const userObject = {...user};
@@ -36,7 +37,7 @@ export class DatabaseService {
 
   // this method takes an User Id and
   // delete an User document from the Firestore collection
-  deleteEmployee(userId: string) {
+  deleteUser(userId: string) {
     this.firestore.doc('UserCollection/' + userId).delete();
   }
 

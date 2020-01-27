@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
-import { DatabaseService } from '../service/database.service'
-import { AuthService } from '../service/auth.service'
+import { DatabaseService } from '../service/database.service';
+import { AuthService } from '../service/auth.service';
+import { User } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-create-account',
@@ -14,12 +15,13 @@ export class CreateAccountPage implements OnInit {
 	public email                  : any = "";
   public password	              : any = "";
   public mobileNumber           : any = "";
+  public address                : any = "";
   public selectedUserCity       : any = "";
   public selectedUserState      : any = "";
   public enteredPassword        : string;
   public conformPasswordIcon    : any = "eye";
   public conformPasswordType    : any = "password";
-  public countryCode                  = {code:"+91"};
+  public countryCode            : any = {code:"+91"};
   public countryCodeDuplicate   : any = [];
   fullNameError                 : any;
   emailError                    : any;
@@ -28,6 +30,12 @@ export class CreateAccountPage implements OnInit {
   addressError                  : any;
   stateError                    : any;
   cityError                     : any;
+
+   // user object - type: User
+   user: User = new User();
+
+   // array of users - type: User
+   users: User[];
 
   constructor(public navCtrl       : NavController,
               private toastCtrl   : ToastController,
@@ -65,6 +73,11 @@ export class CreateAccountPage implements OnInit {
     if(self.name == "" || self.name == undefined) {
       self.showErrorToast("Please enter full name");
       self.fullNameError = "Please enter full name";
+      return;
+    }
+    if(self.address == "" || self.address == undefined) {
+      self.showErrorToast("Please enter address");
+      self.addressError = "Please enter address";
       return;
     }
     if(self.email == "" || self.email == undefined) {
@@ -152,6 +165,11 @@ export class CreateAccountPage implements OnInit {
         }
         self.authService.signup(function(isSuccess){
           if(isSuccess) {
+            self.databaseService.addUser(function(isSuccess){
+              if(isSuccess) {
+
+              }
+            },this.user)
 
           }
         }, email, self.password)
