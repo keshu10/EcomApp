@@ -114,10 +114,17 @@
                 </ion-label>
               </ion-item>
             </span>
-            <span>
+            <span *ngIf="!(authService.user | async)">
               <ion-item color="white" lines="none">
                 <ion-label style="color: #a52a2a;" (click)="loginSignUp()">
                   Login/Sign-Up  
+                </ion-label>
+              </ion-item>
+            </span>
+            <span *ngIf="authService.user | async">
+              <ion-item color="white" lines="none">
+                <ion-label style="color: #a52a2a;" (click)="logOut()">
+                  Logout  
                 </ion-label>
               </ion-item>
             </span>

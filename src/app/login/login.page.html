@@ -11,7 +11,7 @@
           <ion-icon name="mail" slot="start" class="text-primary"></ion-icon>
           Username
       </ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="email" required></ion-input>
+      <ion-input type="text" [(ngModel)]="user.email" name="email" required></ion-input>
     </ion-item>
     <ion-item class="remove-line-item">
       <ion-label position="fixed">
@@ -29,7 +29,7 @@
       </ion-text>
     </div>
 
-    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="checkUserIsLoggedIn($event)">LOGIN</ion-button>
+    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="checkUserIsLoggedIn(user)">LOGIN</ion-button>
     <div style=" text-align: center; margin-top: 20px;">
       <ion-text>
         Don't have an account? 

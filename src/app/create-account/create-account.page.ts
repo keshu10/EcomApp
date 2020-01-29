@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, ToastController, AlertController } from '@ionic/angular';
 import { DatabaseService } from '../service/database.service';
 import { AuthService } from '../service/auth.service';
 import { User } from 'src/app/interface/user';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-account',
@@ -37,10 +38,13 @@ export class CreateAccountPage implements OnInit {
    // array of users - type: User
    users: User[];
 
-  constructor(public navCtrl       : NavController,
-              private toastCtrl   : ToastController,
+  constructor(public navCtrl         : NavController,
+              private toastCtrl      : ToastController,
               public databaseService : DatabaseService,
-              public authService :AuthService) { 
+              public authService     : AuthService,
+              public alertCtrl       : AlertController,
+              private router         : Router, 
+		          private route          : ActivatedRoute) { 
   }
 
   ngOnInit() {
@@ -65,28 +69,28 @@ export class CreateAccountPage implements OnInit {
 		}
 	}
 
-  async createAccountConfromation(event) {
+  async createAccountConfromation(user: User) {
     var self = this;
-    var currentTarget =  event.currentTarget;
+    //var currentTarget =  event.currentTarget;
     
     //Set the boolean variable for validate the field validation
-    if(self.name == "" || self.name == undefined) {
+    if(self.user.name == "" || self.user.name == undefined) {
       self.showErrorToast("Please enter full name");
       self.fullNameError = "Please enter full name";
       return;
     }
-    if(self.address == "" || self.address == undefined) {
+    if(self.user.address == "" || self.user.address == undefined) {
       self.showErrorToast("Please enter address");
       self.addressError = "Please enter address";
       return;
     }
-    if(self.email == "" || self.email == undefined) {
+    if(self.user.email == "" || self.user.email == undefined) {
       self.showErrorToast("Please enter email");
       self.emailError  = "Please enter email";
       return;
     } else {
       //used for check email pattern
-      var email         = self.email.trim();
+      var email         = self.user.email.trim();
       var enteredEmail  = email.toLowerCase();
       
       //var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
@@ -107,12 +111,12 @@ export class CreateAccountPage implements OnInit {
         return;
       }
       //Set the boolean variable for validate the field validation
-      if(self.mobileNumber == "" || self.mobileNumber == undefined) {
+      if(self.user.mobileNumber == "" || self.user.mobileNumber == undefined) {
         self.showErrorToast("Please enter mobile number");
         self.mobileNoError  = "Please enter mobile number";
         return;
       } else {
-        var enteredNumber = self.mobileNumber;
+        var enteredNumber = self.user.mobileNumber;
         var phoneno       = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         if(enteredNumber[0] == 0) {
           self.showErrorToast("Number is not start with zero");
@@ -153,12 +157,12 @@ export class CreateAccountPage implements OnInit {
           self.mobileNoError  = "Enter valid number";
           return;
         }
-        if(self.selectedUserState == "" || self.selectedUserState == undefined) {
+        if(self.user.selectedUserState == "" || self.user.selectedUserState == undefined) {
           self.showErrorToast("Please select state");
           self.stateError = "Please select state";
           return;
         }
-        if(self.selectedUserCity == "" || self.selectedUserCity == undefined) {
+        if(self.user.selectedUserCity == "" || self.user.selectedUserCity == undefined) {
           self.showErrorToast("Please select city");
           self.cityError = "Please select city";
           return;
@@ -167,17 +171,39 @@ export class CreateAccountPage implements OnInit {
           if(isSuccess) {
             self.databaseService.addUser(function(isSuccess){
               if(isSuccess) {
-
+                self.showModalSuccess('Account created successfully', "Click to 'Continue' ");
               }
-            },this.user)
-
+              else {
+                self.showAlert("Alert" , "This email address is already registered");
+              }
+            },user)
+          }
+          else {
+            self.showAlert("Alert" , "This email address is already registered");
           }
         }, email, self.password)
-
       }
-      
     }
   }
+  // showModalSuccess finstion for success
+  async showModalSuccess(header,message) {
+		var self = this;
+		const alert = await self.alertCtrl.create({
+			header  : header,
+			message : message,
+			buttons : [
+				{
+					text: 'CONTINUE',
+					handler: () => {
+            this.navCtrl.navigateForward('tabs/tab1');
+					}
+				}
+			]
+		});
+		
+		await alert.present();
+	}
+
   //showErrorToast function for error
   async showErrorToast(messages) {
 		var self = this ;
@@ -188,7 +214,24 @@ export class CreateAccountPage implements OnInit {
 			cssClass        : "cmnToastColor"
 		});
 		toast.present();
-	}
+  }
+  
+  // showAlert function for alert 
+  async showAlert(title , message) {
+    const alert = await this.alertCtrl.create({
+        header: title,
+        message: message,
+        buttons: [
+          {
+            text: 'Go To Login',
+            handler: () => {
+              this.navCtrl.navigateForward('tabs/tab1');
+            }
+          }
+        ]
+    });
+    return await alert.present();
+  }
 
   showAndHidePassword(event){
     //this.createAccountForm.value.newPassword

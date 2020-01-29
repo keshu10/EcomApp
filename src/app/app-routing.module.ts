@@ -38,6 +38,7 @@ const routes: Routes = [
     path: 'create-account',
     loadChildren: () => import('./create-account/create-account.module').then( m => m.CreateAccountPageModule)
   }
+  
 ];
 @NgModule({
   imports: [

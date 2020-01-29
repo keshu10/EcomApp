@@ -12,7 +12,7 @@
           Full Name
           <br><div no-padding class="errMsgLogin" >{{fullNameError}}</div>
       </ion-label>
-      <ion-input type="text" [(ngModel)]="name" name="name" required (ionChange)="checkInputValue('name')"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.name" name="name" required (ionChange)="checkInputValue('name')"></ion-input>
     </ion-item>
 
     <ion-item class="remove-line-item">
@@ -21,7 +21,7 @@
           Email
           <br><div no-padding class="errMsgLogin" >{{emailError}}</div>
       </ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="email" required (ionChange)="checkInputValue('email')"></ion-input>
+      <ion-input type="text" [(ngModel)]="user.email" name="email" required (ionChange)="checkInputValue('email')"></ion-input>
     </ion-item>
 
     <ion-item class="remove-line-item">
@@ -45,7 +45,7 @@
                 Mobile No
                 <br><div no-padding class="errMsgLogin" >{{mobileNoError}}</div>
             </ion-label>
-            <ion-select interface="action-sheet" [(ngModel)]="countryCode">
+            <ion-select interface="action-sheet" [(ngModel)]="user.countryCode">
               <ion-select-option value="+91">+91</ion-select-option>
             </ion-select>
           </ion-item>
@@ -53,7 +53,7 @@
         
         <ion-col width-50>
           <ion-item lines="full" style="margin: 8px;">
-            <ion-input type="tel"  maxlength="10" [(ngModel)]="mobileNumber" name="mobileNumber" required (ionChange)="checkInputValue('mobileNumber')">
+            <ion-input type="tel"  maxlength="10" [(ngModel)]="user.mobileNumber" name="mobileNumber" required (ionChange)="checkInputValue('mobileNumber')">
             </ion-input>
           </ion-item>
         </ion-col>
@@ -66,7 +66,7 @@
           Address
           <br><div no-padding class="errMsgLogin" >{{addressError}}</div>
       </ion-label>
-      <ion-input type="text" [(ngModel)]="address" name="address" required></ion-input>
+      <ion-input type="text" [(ngModel)]="user.address" name="address" required></ion-input>
     </ion-item>
 
     <ion-item>
@@ -75,7 +75,7 @@
         State
         <br><div no-padding class="errMsgLogin" >{{stateError}}</div>
       </ion-label>
-      <ion-select interface="action-sheet"  [(ngModel)]="selectedUserState">
+      <ion-select interface="action-sheet"  [(ngModel)]="user.selectedUserState">
         <ion-select-option  value="Madhya Pradesh">Madhya Pradesh</ion-select-option> 
       </ion-select>
     </ion-item>
@@ -86,12 +86,12 @@
         City
         <br><div no-padding class="errMsgLogin" >{{cityError}}</div>
       </ion-label>
-      <ion-select interface="action-sheet" [(ngModel)]="selectedUserCity">
+      <ion-select interface="action-sheet" [(ngModel)]="user.selectedUserCity">
         <ion-select-option value="Indore">Indore</ion-select-option> 
       </ion-select>
     </ion-item>
 
-    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="createAccountConfromation($event)">REGISTER</ion-button>
+    <ion-button style="color: lightslategray;" expand="block" fill="outline" color="dark" tappable (click)="createAccountConfromation(user)">REGISTER</ion-button>
     <ion-text>
       By signing in you agree to our 
       <ion-button style="margin-bottom: 14px;" size="small" color="dark" fill="clear" tappable (click)="openTermsCondition()">Terms & Conditions</ion-button>
