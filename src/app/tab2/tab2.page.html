@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-title text-center>
+    <ion-title class="ion-text-center">
         Categories
     </ion-title>
     <ion-buttons slot="end">
@@ -15,114 +15,41 @@
 </ion-header>
 
 <ion-content>
-  <div style="border:1px solid transparent; margin-top: 20px;">
-    <ion-list class="ion-text-center">
-      <ion-label>
-        Fashion
-      </ion-label>
-    </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Shop by Category
+    </ion-list-header>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/Category-Icons/Mens-Fashion.png">
+      </ion-thumbnail>
+      <ion-label>Men's Fashion</ion-label>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Men-Fashion.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Mens Fashion</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/women-fashion.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Women's Fashion</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Jewellary.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Jewellary</div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Bags&luggage.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Bags & Luggage</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Sports&Fitness.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Sports & Fitness</div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/Category-Icons/Womens-Fashion.png">
+      </ion-thumbnail>
+      <ion-label>Women's Fashion</ion-label>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
 
-  <div style="border:1px solid transparent; margin-top: 20px;">
-    <ion-list class="ion-text-center">
-      <ion-label>
-        Mobiles & Electronics
-      </ion-label>
-    </ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/Category-Icons/Kidsfashion-Toys.png">
+      </ion-thumbnail>
+      <ion-label>Kids Fashion</ion-label>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Mobile-Phone.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Mobile Phones</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Mobile-Accessories.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Mobiles Accessories</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Laptop.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Laptops & Computers</div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Covers.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Cases & Covers</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Tv-Audio.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">TVs, Audio & Video</div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Appliance.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Appliances</div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Camera.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Cameras </div>
-        </ion-col>
-        <ion-col align-self-center>
-          <ion-avatar style="margin: auto;">
-            <img src="assets/icon/Personal-Care.jpg">
-          </ion-avatar>
-          <div style="text-align: center;">Personal Care</div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="assets/Category-Icons/Mobiles-Computers.png">
+      </ion-thumbnail>
+      <ion-label>Mobile Phones</ion-label>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
 
+  </ion-list>
 </ion-content>

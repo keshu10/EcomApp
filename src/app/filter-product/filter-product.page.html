@@ -19,20 +19,19 @@
   <ion-row style="padding: 10px;" class="ios-input">
     <ion-col size="4">
       <ion-label style="zoom: 0.8;">Min Price</ion-label>
-      <ion-input type="number" [(ngModel)]="minPrice" placeholder="{{MIN_PRICE_DEFAULT_VALUE}}"
+      <ion-input type="number" placeholder="{{MIN_PRICE_DEFAULT_VALUE}}"
         style="border: 1px solid #e8e4e4; margin: 5px;"></ion-input>
     </ion-col>
     <ion-col size="4">
     </ion-col>
     <ion-col size="4">
       <ion-label style="zoom: 0.8;">Max Price</ion-label>
-      <ion-input type="number" [(ngModel)]="maxPrice" placeholder="{{MAX_PRICE_DEFAULT_VALUE}}"
+      <ion-input type="number" placeholder="{{MAX_PRICE_DEFAULT_VALUE}}"
        style="border: 1px solid #e8e4e4; margin: 5px;"></ion-input>
     </ion-col>
   </ion-row>
   <ion-item>
-    <ion-range min="{{MIN_PRICE_DEFAULT_VALUE}}" max="{{MAX_PRICE_DEFAULT_VALUE}}" step="2" dual-knobs="true" pin="true"
-      [(ngModel)]="priceRange" (ionChange)="priceRangeChange($event)">
-    </ion-range>
+    <ion-range min="{{MIN_PRICE_DEFAULT_VALUE}}" max="{{MAX_PRICE_DEFAULT_VALUE}}" step="2" dual-knobs="true" pin="true"></ion-range>
+    <!-- (ionChange)="priceRangeChange($event)" -->
   </ion-item>
 </ion-content>

@@ -5,6 +5,7 @@ import { DatabaseService } from '../service/database.service';
 import { AuthService } from '../service/auth.service';
 import * as firebase         from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -29,7 +30,8 @@ export class LoginPage implements OnInit {
               public loadingCtrl     : LoadingController,
               public databaseService : DatabaseService,
               public afAuth          : AngularFireAuth,
-              public authService     : AuthService) {
+              public authService     : AuthService,
+              private afs            : AngularFirestore) {
 
               }
 
@@ -50,6 +52,53 @@ export class LoginPage implements OnInit {
         password.getElementsByTagName("input")[0].type    = "password";
         this.conformPasswordType = "password";
         this.conformPasswordIcon = "eye";
+    }
+  }
+
+  openLoginPassword(email) {
+    var self = this;
+  }
+
+  userLoginWithFacebook(provider) {
+    var provider = provider;
+    
+    var self = this;
+    if(provider === 'facebook') {
+      var self = this;
+      var providerF = new firebase.auth.FacebookAuthProvider();
+      firebase.auth().signInWithPopup(providerF)
+      .then(function(response) {
+        // successful authentication response here
+        console.log("successful authentication response here");
+        //Add visitor/user details here..
+        sessionStorage.setItem("userIs" , "Customer");
+        var userCollection = this.firebase.firestore().collection("UserCollection").doc().set({
+          provider      : provider,
+          isAnonymous   : false,
+          uid           : response.user.uid,
+          credential    : response.credential,
+          displayName   : response.user.displayName,
+          dob           : '',
+          email         : response.user.email,
+          emailVerified : response.user.emailVerified,
+          photoURL      : response.user.photoURL,
+          refreshToken  : response.user.refreshToken,
+          providerData  : response.user.providerData,
+          //lat           : response.user._lat,
+          createDate    : Number(new Date()),
+          updateDate    : Number(new Date())
+        },
+        function() {
+            window.history.back();
+        });
+      })
+      .catch(function(error) {
+        // unsuccessful authentication response here
+        //console.log(error);
+        if(error.code == 'auth/account-exists-with-different-credential') {
+          alert(error.message + " " + error.email);
+        }
+      });
     }
   }
 

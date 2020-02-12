@@ -254,4 +254,8 @@ export class CreateAccountPage implements OnInit {
     this.navCtrl.navigateForward('login');
   }
 
+  openTermsCondition() {
+    var self = this;
+  }
+
 }

@@ -30,6 +30,12 @@
     </div>
 
     <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="checkUserIsLoggedIn(user)">LOGIN</ion-button>
+    <ion-text class="ion-text-center">
+      OR 
+      <ion-button color="primary" expand="block" fill="outline" tappable (click)="userLoginWithFacebook('facebook')">LOGIN WITH FACEBOOK
+        <ion-icon color="primary" slot="end" name="logo-facebook"></ion-icon>
+      </ion-button>
+    </ion-text>
     <div style=" text-align: center; margin-top: 20px;">
       <ion-text>
         Don't have an account? 
