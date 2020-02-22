@@ -53,6 +53,7 @@ export class AuthService {
     localStorage.removeItem("name");
     localStorage.removeItem("phoneNumber");
     localStorage.removeItem("email");
+    localStorage.removeItem("userIs");
     callback(true);
 	}
 

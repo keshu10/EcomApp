@@ -33,4 +33,8 @@ export class ProductDetailsPage implements OnInit {
     this.nav.navigateForward('/check-out-order');
   }
 
+  moreReview() {
+    var self = this;
+  }
+
 }

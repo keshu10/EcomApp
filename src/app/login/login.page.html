@@ -30,10 +30,18 @@
     </div>
 
     <ion-button style="color: lightslategray;" expand="block" fill="outline" color="black" tappable (click)="checkUserIsLoggedIn(user)">LOGIN</ion-button>
-    <ion-text class="ion-text-center">
+    <ion-text style="display: flex;justify-content: center;">
       OR 
-      <ion-button color="primary" expand="block" fill="outline" tappable (click)="userLoginWithFacebook('facebook')">LOGIN WITH FACEBOOK
-        <ion-icon color="primary" slot="end" name="logo-facebook"></ion-icon>
+    </ion-text>
+    <ion-text lines="none" style="display: flex;justify-content: center;">
+      <ion-button color="danger" tappable (click)="userLoginWithSocial('google')">
+        <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" tappable (click)="userLoginWithSocial('facebook')">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button color="secondary" tappable (click)="userLoginWithSocial('twitter')">
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
       </ion-button>
     </ion-text>
     <div style=" text-align: center; margin-top: 20px;">

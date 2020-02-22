@@ -59,9 +59,8 @@ export class LoginPage implements OnInit {
     var self = this;
   }
 
-  userLoginWithFacebook(provider) {
+  userLoginWithSocial(provider) {
     var provider = provider;
-    
     var self = this;
     if(provider === 'facebook') {
       var self = this;
@@ -70,26 +69,112 @@ export class LoginPage implements OnInit {
       .then(function(response) {
         // successful authentication response here
         console.log("successful authentication response here");
+        localStorage.setItem('email', response.user.email);
+        localStorage.setItem('name', response.user.displayName);
         //Add visitor/user details here..
-        sessionStorage.setItem("userIs" , "Customer");
-        var userCollection = this.firebase.firestore().collection("UserCollection").doc().set({
+        localStorage.setItem("userIs" , "Customer");
+        var userCollection = firebase.firestore().collection("UserCollection").doc();
+        var docid           = userCollection.id; 
+        userCollection.set({
           provider      : provider,
           isAnonymous   : false,
-          uid           : response.user.uid,
-          credential    : response.credential,
+          //uid           : response.user.uid,
           displayName   : response.user.displayName,
           dob           : '',
           email         : response.user.email,
           emailVerified : response.user.emailVerified,
+          id            : docid,
           photoURL      : response.user.photoURL,
           refreshToken  : response.user.refreshToken,
-          providerData  : response.user.providerData,
-          //lat           : response.user._lat,
           createDate    : Number(new Date()),
           updateDate    : Number(new Date())
-        },
-        function() {
-            window.history.back();
+        })
+        .then(function() {
+          window.history.back();
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+      })
+      .catch(function(error) {
+        // unsuccessful authentication response here
+        //console.log(error);
+        if(error.code == 'auth/account-exists-with-different-credential') {
+          alert(error.message + " " + error.email);
+        }
+      });
+    } else if(provider === 'google') {
+      var providerG = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(providerG)
+      .then(function(response) {
+        // successful authentication response here
+        console.log("successful authentication response here");
+        localStorage.setItem('email', response.user.email);
+        localStorage.setItem('name', response.user.displayName);
+        localStorage.setItem("userIs" , "Customer");
+        //Add visitor/user details here..
+      var userCollection1 = firebase.firestore().collection("UserCollection").doc();
+      var docid           = userCollection1.id;
+      userCollection1.set({
+        provider           : provider,
+        isAnonymous        : false,
+        //uid                : response.user.uid,
+        name               : response.user.displayName,
+        dob                : '',
+        email              : response.user.email,
+        emailVerified      : response.user.emailVerified,
+        id                 : docid,
+        profilePhoto       : response.user.photoURL,
+        refreshToken       : response.user.refreshToken,
+        timeStamp          : Number(new Date()),
+        timestampUpdate    : Number(new Date())
+        })
+        .then(function() {
+          window.history.back();
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+      })
+      .catch(function(error) {
+        //console.log(error);
+        // unsuccessful authentication response here
+        if(error.code == 'auth/account-exists-with-different-credential') {
+          alert(error.message + " " + error.email);
+        }
+      });
+    } else if(provider === 'twitter') {
+      var self = this;
+      var providerT = new firebase.auth.TwitterAuthProvider();
+      firebase.auth().signInWithPopup(providerT)
+      .then(function(response) {
+        // successful authentication response here
+        console.log("successful authentication response here");
+        localStorage.setItem('email', response.user.email);
+        localStorage.setItem('name', response.user.displayName);
+        localStorage.setItem("userIs" , "Customer");
+        //Add visitor/user details here..
+        var userCollection2 = firebase.firestore().collection("UserCollection").doc()
+        var docid           = userCollection2.id;
+        userCollection2.set({
+          provider           : provider,
+          isAnonymous        : false,
+          uid                : response.user.uid,
+          name               : response.user.displayName,
+          dob                : '',
+          email              : response.user.email,
+          emailVerified      : response.user.emailVerified,
+          id                 : docid,
+          profilePhoto       : response.user.photoURL,
+          refreshToken       : response.user.refreshToken,
+          timeStamp          : Number(new Date()),
+          timestampUpdate    : Number(new Date())
+        })
+        .then(function() {
+          window.history.back();
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
         });
       })
       .catch(function(error) {
