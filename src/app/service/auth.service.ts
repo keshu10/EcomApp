@@ -31,6 +31,7 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(objectEmail.email, objectEmail.password)
       .then(value => {
+        
         callback(true)
         console.log('Nice, it worked!', value);
       })

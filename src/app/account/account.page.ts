@@ -42,6 +42,10 @@ export class AccountPage implements OnInit {
     this.navCtrl.navigateForward('tabs/tab1');
   }
 
+  openMyAddress() {
+    this.navCtrl.navigateForward('myaddress');
+  }
+
   getUserForAccount() {
     var self = this;
     self.databaseService.getUser(function(user){

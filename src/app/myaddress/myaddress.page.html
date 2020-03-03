@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      My Address
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let addressList of (addressListDisplay | async)">
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-label>
+              <h3>{{addressList.FullName}} </h3>
+              <h5>{{addressList.HouseNo}} {{addressList.areaColony}} </h5>
+              <h5>{{addressList.landMark}} {{addressList.City}} </h5>
+              <h5>{{addressList.State}} - {{addressList.pincode}} </h5>
+              <h4>{{addressList.mobileNumber}}</h4>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-buttons style =" margin-left: 85%;" (click)="showPopOver($event)">
+            <ion-icon slot="icon-only" name="more"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="(addressListDisplay | async)?.length == 0">
+    <p class="aligncenter">
+      <img src="/assets/icon/Not-Found.png" alt="centered image" />
+    </p>
+    <span class="aligncenter">
+      <h4>We're waiting for your address</h4>
+      <h4>Let us add your address</h4>
+      <h4>for your shopping.</h4>
+      <ion-button size="small" style="--background: #e40046; margin-left: 27%;" (click)="addNewAddress()">Add a new address</ion-button>
+    </span>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="(addressListDisplay | async)?.length != 0">
+  <ion-toolbar>
+    <ion-button expand="full" size="small" style="--background: #e40046;" (click)="addNewAddress()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Add a new address
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

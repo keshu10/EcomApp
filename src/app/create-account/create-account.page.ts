@@ -195,7 +195,7 @@ export class CreateAccountPage implements OnInit {
 				{
 					text: 'CONTINUE',
 					handler: () => {
-            this.navCtrl.navigateForward('tabs/tab1');
+            this.navCtrl.navigateForward('login');
 					}
 				}
 			]

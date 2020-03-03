@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Add New Address
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      Pincode
+      <br><div no-padding class="errMsgLogin" >{{pinCodeError}}</div>
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="pincode" name="pincode" required (ionChange)="checkInputValue('pincode')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      Full Name
+      <br><div no-padding class="errMsgLogin" >{{fullNameError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="name" name="name" required (ionChange)="checkInputValue('name')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      House No. Building Name
+      <br><div no-padding class="errMsgLogin" >{{houseNoError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="houseNo" name="houseNo" required (ionChange)="checkInputValue('houseNo')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      Area, Colony Name
+      <br><div no-padding class="errMsgLogin" >{{areaColonyError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="areaColony" name="areaColony" required (ionChange)="checkInputValue('areaColony')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      LandMark
+      <br><div no-padding class="errMsgLogin" >{{landMarkError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="landMark" name="landMark" required (ionChange)="checkInputValue('landMark')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      State
+      <br><div no-padding class="errMsgLogin" >{{stateError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="state" name="state" required (ionChange)="checkInputValue('state')"></ion-input>
+  </ion-item>
+
+  <ion-item class="remove-line-item">
+    <ion-label position="floating">
+      City
+      <br><div no-padding class="errMsgLogin" >{{cityError}}</div>
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="city" name="city" required (ionChange)="checkInputValue('city')"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="phone-portrait" color="gray"></ion-icon>
+              Mobile No
+              <br><div no-padding class="errMsgLogin" >{{mobileNoError}}</div>
+          </ion-label>
+          <ion-select interface="action-sheet" [(ngModel)]="countryCode">
+            <ion-select-option value="+91">+91</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col width-50>
+        <ion-item lines="full" style="margin: 8px;">
+          <ion-input type="tel"  maxlength="10" [(ngModel)]="mobileNumber" name="mobileNumber" required (ionChange)="checkInputValue('mobileNumber')">
+          </ion-input>
+        </ion-item>
+      </ion-col>
+     </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="addressType">
+      <ion-list-header>
+        <ion-label>Address Type</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Home Address</ion-label>
+        <ion-radio slot="start" color="success" value="Home"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Work/Office Address</ion-label>
+        <ion-radio slot="start" color="success" value="Work"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" size="small" style="--background: #e40046;" (click)="saveAddress()">
+      <ion-icon slot="start" name="save"></ion-icon>
+      Save
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

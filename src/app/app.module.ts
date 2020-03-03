@@ -19,6 +19,7 @@ import { RateReviewPageModule } from './rate-review/rate-review.module';
 import { IonicRatingModule }    from 'ionic4-rating';
 import { FilterProductPageModule } from './filter-product/filter-product.module';
 import { AuthService } from './service/auth.service';
+import { PopOverPageAddressModule }                      from './myaddress/pop-over-page-address.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { AuthService } from './service/auth.service';
     RateReviewPageModule,
     IonicRatingModule,
     FilterProductPageModule,
+    PopOverPageAddressModule,
     FormsModule,
   ],
   providers: [
