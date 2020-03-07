@@ -1,0 +1,304 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Order Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <span>
+    <ion-card>
+      <ion-row style="border-bottom: 1px solid #e0e0e0; background: #f0f8ff;">
+        <ion-col size="6" class="ion-align-self-center">
+          <div>
+            <span>Order Id: #458217</span>
+          </div>
+        </ion-col>
+        <ion-col size="6" class="ion-align-self-center">
+          <div color="dark" class="boldIt titleText top-right ion-text-center " style="text-align: right !important;">
+            <span>3/3/2020, 11:38 am</span>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="border-bottom: 1px solid #e0e0e0;">
+        <ion-col size="3" class="ion-align-self-center">
+          <img src="assets/Mens/mens3.jpg" height="110" width="110">
+        </ion-col>
+        <ion-col size="6">
+          <ion-text color="dark">
+            <h6> Billion : Full Sleeve Ombre Men Sweatshirt </h6>
+          </ion-text>
+          <ion-label>
+            Size: M
+          </ion-label> |
+          <ion-label>
+            Color: black
+          </ion-label>
+        </ion-col>
+        <ion-col size="3" class="ion-align-self-center">
+          <div class="boldIt titleText top-right ion-text-center " style="text-align: right !important;">
+            <div color="dark" style="margin-right: 20px; margin-bottom: 60px;" class="fa fa-rupee"> 5000. </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row  style="border-bottom: 1px solid #e0e0e0; background: #f0f8ff;">
+        <ion-col size="8" class="ion-align-self-center">
+          <div>
+            <ion-label color="success">Delivered</ion-label><br/>
+            <ion-text> Delivered 7/3/2020, 18:40 pm</ion-text>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="boldIt titleText top-right ion-text-center " style="text-align: right !important;">
+            <ion-button size="small" color="dark" (click)="hideShowTrack()">
+              Track
+              <ion-icon slot="end" id="downrotate" name="arrow-dropdown"></ion-icon> 
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <div id="hide" style="background: #f0f8ff;">
+        <ion-list style="background: #f0f8ff;">
+          <ion-list-header>
+            Tracking Details
+          </ion-list-header>
+        </ion-list>
+        <ion-row>
+          <ion-col size="3" class="ion-align-self-center ion-text-center">
+            <div class="icon">
+              <div class="circleicongreen">
+                <img src="assets/icon/Placed-Order.svg" style="width:30px">
+              </div>
+              <!-- <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div> -->
+              <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div>
+            </div>
+          </ion-col>
+          <ion-col size="8" class="colmargin">
+            <ion-label>
+              <h3>Ordered and Approved</h3>
+              <p color="dark">3/3/2020, 11:38 am</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1" class="colmargin">
+            <ion-buttons>
+              <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -10px;">
+          <ion-col size="3" class="ion-align-self-center ion-text-center">
+            <div class="icon">
+              <div class="circleicongreen">
+                <img src="assets/icon/Packed-Order.svg" style="width:30px">
+              </div>
+              <!-- <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div> -->
+              <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div>
+            </div>
+          </ion-col>
+          <ion-col size="8" class="colmargin">
+            <ion-label>
+              <h3>Packed</h3>
+              <p color="dark">3/3/2020, 15:38 pm</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1" class="colmargin">
+            <ion-buttons>
+              <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+            </ion-buttons> 
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -10px;">
+          <ion-col size="3" class="ion-align-self-center ion-text-center">
+            <div class="icon">
+              <div class="circleicongreen">
+                <img src="assets/icon/Shipped-Order.svg" style="width:30px">
+              </div>
+              <!-- <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div> -->
+              <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div>
+            </div>
+          </ion-col>
+          <ion-col size="8" class="colmargin">
+            <ion-label>
+              <h3>Shipped</h3>
+              <p color="black">4/3/2020, 10:20 am</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1" class="colmargin">
+            <ion-buttons>
+              <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+            </ion-buttons> 
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -10px;">
+          <ion-col size="3" class="ion-align-self-center ion-text-center">
+            <div class="icon">
+              <div class="circleicongreen">
+                <img src="assets/icon/OutForDelivery-Order.svg" style="width:30px">
+              </div>
+              <!-- <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div> -->
+              <div class="vertical-line" style="border-left: 4px solid #60bf79;"></div>
+            </div>
+          </ion-col>
+          <ion-col size="8" class="colmargin">
+            <ion-label>
+              <h3>Out For Delivery</h3>
+              <p color="black">6/3/2020, 16:40 pm</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1" class="colmargin">
+            <ion-buttons>
+              <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+            </ion-buttons> 
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -10px;">
+          <ion-col size="3" class="ion-align-self-center ion-text-center">
+            <div class="icon">
+              <div class="circleicongreen">
+                <img src="assets/icon/Delivered-Order.svg" style="width:30px">
+              </div>
+              <!-- <div class="circleiconwhite">
+                <img src="assets/icon/Delivered-Order.svg" style="width:30px">
+              </div> -->
+            </div>
+          </ion-col>
+          <ion-col size="8" class="colmargin">
+            <ion-label>
+              <h3>Delivered</h3>
+              <p color="black"> 7/3/2020, 18:40 pm</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1" class="colmargin">
+            <ion-buttons>
+              <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+            </ion-buttons> 
+          </ion-col>
+        </ion-row>
+
+        <ion-row  style="border-bottom: 1px solid #e0e0e0;">
+          <ion-col size="7" >
+            <div>
+              <rating [rate]="0"
+                readonly="false" 
+                size="default" 
+                (rateChange)="logRatingChange('',$event)">
+              </rating>
+            </div>
+          </ion-col>
+          <ion-col size="5" class="colmargin">
+            <ion-button fill="clear" size="small">Write a Review</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row  style="border-bottom: 1px solid #e0e0e0;">
+        <ion-col size="11" class="ion-align-self-center">
+          <div style="margin: 10px;">
+            <ion-label color="dark">RETURN / REPLACE</ion-label><br/>
+            <ion-text> Was allowed till Tue, 17/3/2020</ion-text>
+          </div>
+        </ion-col>
+        <ion-col size="1" class="colmargin">
+          <ion-buttons>
+            <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <ion-row  style="border-bottom: 1px solid #e0e0e0;">
+        <ion-col class="ion-align-self-center">
+          <ion-button fill="clear" size="small">
+            <ion-icon color="primary" slot="start" name="document"></ion-icon>
+            Download Invoice
+          </ion-button>
+        </ion-col>
+        <ion-col size="1" class="colmargin">
+          <ion-buttons>
+            <ion-icon color="medium" slot="icon-only" name="arrow-dropright"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+
+      <div>
+        <ion-list style="background: #f0f8ff;">
+          <ion-list-header>
+            Price Details
+          </ion-list-header>
+        </ion-list>
+        <ion-row>
+          <ion-col size="9" class="colmargin">
+            <div>
+              List Price
+            </div>
+          </ion-col>
+          <ion-col size="3" class="colmargin">
+            <div class="fa fa-rupee">
+              <del>599.00</del>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="9" class="colmargin">
+            <div>
+              Selling price
+            </div>
+          </ion-col>
+          <ion-col size="3" class="colmargin">
+            <div class="fa fa-rupee">
+              499.00
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="9" class="colmargin">
+            <div>
+              Offer discount(10%)
+            </div>
+          </ion-col>
+          <ion-col size="3" class="colmargin">
+            -
+            <div class="fa fa-rupee">
+              49.9
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="9" class="colmargin">
+            <div>
+              Shipping fee
+            </div>
+          </ion-col>
+          <ion-col size="3" class="colmargin">
+            <div class="fa fa-rupee">
+              50
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row style="border-top: 1px solid #e0e0e0; margin-bottom: 5px;">
+          <ion-col size="9" class="colmargin">
+            <div>
+              Total Amount
+            </div>
+          </ion-col>
+          <ion-col size="3" class="colmargin">
+            <div class="fa fa-rupee">
+              499.00
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-card>
+  </span>
+</ion-content>

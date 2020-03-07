@@ -47,6 +47,18 @@ const routes: Routes = [
   {
     path: 'add-new-address',
     loadChildren: () => import('./add-new-address/add-new-address.module').then( m => m.AddNewAddressPageModule)
+  },
+  {
+    path: 'myorders',
+    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'view-order-details',
+    loadChildren: () => import('./view-order-details/view-order-details.module').then( m => m.ViewOrderDetailsPageModule)
   }
   
 ];

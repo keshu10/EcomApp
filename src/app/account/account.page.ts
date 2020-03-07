@@ -42,8 +42,16 @@ export class AccountPage implements OnInit {
     this.navCtrl.navigateForward('tabs/tab1');
   }
 
+  openEditProfile() {
+    this.navCtrl.navigateForward('edit-profile');
+  }
+
   openMyAddress() {
     this.navCtrl.navigateForward('myaddress');
+  }
+
+  openMyOrders() {
+    this.navCtrl.navigateForward('myorders');
   }
 
   getUserForAccount() {

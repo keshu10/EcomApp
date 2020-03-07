@@ -58,6 +58,19 @@
 }
 
 .aligncenter {
+  width: 100%;
   text-align: center;
+
 }
 
+.box-size-order {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d7d7e2;
+  text-align: center;
+  margin: 3px 2px 6px 5px;
+}
+
+.padd {
+  padding: 15% 10px;
+}
