@@ -60,11 +60,11 @@
       <ion-icon name="cube" color="secondary" slot="start"></ion-icon>
       <ion-label>My Orders</ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="openNotification()">
       <ion-icon name="notifications" color="success" slot="start"></ion-icon>
       <ion-label>Notification</ion-label>
     </ion-item>
-    <ion-item>
+    <ion-item (click)="openWishlist()">
       <ion-icon name="heart" color="danger" slot="start"></ion-icon>
       <ion-label>Wishlist</ion-label>
     </ion-item>
@@ -78,7 +78,7 @@
     </ion-item>
     <ion-item>
       <ion-icon name="document" color="dark" slot="start"></ion-icon>
-      <ion-label>Privacy policiy</ion-label>
+      <ion-label>Privacy policy</ion-label>
     </ion-item>
     <ion-item (click)="logOut()">
       <ion-icon name="log-out" color="danger" slot="start"></ion-icon>

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Wishlist
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="padd">
+    <p class="aligncenter">
+      <img src="/assets/icon/wishlist_empty.png" alt="centered image" width="40%"/>
+    </p>
+    <span class="aligncenter">
+      <p> Your wishlist is empty. </p>
+      <p> There are no items in your wishlist </p>
+    </span>
+    <div class="aligncenter">
+      <ion-button fill="outline" color="secondary" (click)="startShopping()"> Start Shopping </ion-button>
+    </div>
+  </div> -->
+  <ion-list>
+    <ion-card>
+      <ion-row>
+        <ion-col size="2" class="ion-align-self-center">
+          <img src="assets/Mens/mens7.jpg">
+        </ion-col>
+        <ion-col size="8">
+          <p>Billion : Full Sleeve Ombre Men Sweatshirt</p>
+          <ion-item lines="none">
+            <ion-chip style="--background:green;">
+              <ion-label color="light">5</ion-label>
+              <ion-icon name="star" color="light"></ion-icon>
+            </ion-chip>
+            <ion-label>
+              (6452)
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <small class="fa fa-rupee"> 600
+              <del>1550</del>
+            </small>
+            <ion-label color="success" size="small">  62% off</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="2">
+          <ion-buttons>
+            <ion-icon slot="icon-only" name="trash" color="dark"></ion-icon>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-list>
+</ion-content>

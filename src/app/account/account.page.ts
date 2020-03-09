@@ -42,12 +42,20 @@ export class AccountPage implements OnInit {
     this.navCtrl.navigateForward('tabs/tab1');
   }
 
+  openNotification() {
+    this.navCtrl.navigateForward('notification');
+  }
+
   openEditProfile() {
     this.navCtrl.navigateForward('edit-profile');
   }
 
   openMyAddress() {
     this.navCtrl.navigateForward('myaddress');
+  }
+
+  openWishlist() {
+    this.navCtrl.navigateForward('wishlist');
   }
 
   openMyOrders() {

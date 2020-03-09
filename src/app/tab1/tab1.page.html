@@ -7,7 +7,8 @@
       LifeStyle
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="openNotification()">
+        <ion-badge class="badgecss" color="success">4</ion-badge>
         <ion-icon slot="icon-only" name="notifications" color="dark"></ion-icon>
       </ion-button>
       <ion-button (click)="showProducts()">
@@ -25,18 +26,18 @@
 
 <ion-content>
   <ion-slides #mySlider pager="true" [options]="sliderOpts">
-      <ion-slide>
-        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider1.jpg" style="min-height: 200px;height: 200px;"></a>
-      </ion-slide>
-      <ion-slide>
-        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider2.jpg" style="min-height: 200px;height: 200px;"></a>
-      </ion-slide>
-      <ion-slide>
-        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider3.jpg" style="min-height: 200px;height: 200px;"></a>
-      </ion-slide>
-      <ion-slide>
-        <a href='' style="width: 100% !important;"><img src="assets/imgs/slider4.jpg" style="min-height: 200px;height: 200px;"></a>
-      </ion-slide>
+    <ion-slide>
+      <a href='' style="width: 100% !important;"><img src="assets/imgs/slider1.jpg" style="min-height: 200px;height: 200px;"></a>
+    </ion-slide>
+    <ion-slide>
+      <a href='' style="width: 100% !important;"><img src="assets/imgs/slider2.jpg" style="min-height: 200px;height: 200px;"></a>
+    </ion-slide>
+    <ion-slide>
+      <a href='' style="width: 100% !important;"><img src="assets/imgs/slider3.jpg" style="min-height: 200px;height: 200px;"></a>
+    </ion-slide>
+    <ion-slide>
+      <a href='' style="width: 100% !important;"><img src="assets/imgs/slider4.jpg" style="min-height: 200px;height: 200px;"></a>
+    </ion-slide>
   </ion-slides>
 
   <div style="display: flex;overflow: auto;">

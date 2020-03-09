@@ -59,6 +59,14 @@ const routes: Routes = [
   {
     path: 'view-order-details',
     loadChildren: () => import('./view-order-details/view-order-details.module').then( m => m.ViewOrderDetailsPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./wishlist/wishlist.module').then( m => m.WishlistPageModule)
   }
   
 ];

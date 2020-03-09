@@ -30,4 +30,8 @@ export class Tab1Page implements OnInit {
 	this.nav.navigateForward('/all-products');
   }
 
+  openNotification() {
+    this.nav.navigateForward('notification');
+  }
+
 }
