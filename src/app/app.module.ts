@@ -20,7 +20,10 @@ import { IonicRatingModule }    from 'ionic4-rating';
 import { FilterProductPageModule } from './filter-product/filter-product.module';
 import { AuthService } from './service/auth.service';
 import { PopOverPageAddressModule }                      from './myaddress/pop-over-page-address.module';
-
+import { File } from '@ionic-native/file/ngx';
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture/ngx';
+import { Media, MediaObject } from '@ionic-native/media/ngx';
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -34,11 +37,15 @@ import { PopOverPageAddressModule }                      from './myaddress/pop-o
     FilterProductPageModule,
     PopOverPageAddressModule,
     FormsModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFirestore,
+    File,
+    MediaCapture,
+    Media,
     AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
