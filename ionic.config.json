@@ -1,6 +1,8 @@
 {
   "name": "EcomApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "adc00315"
 }

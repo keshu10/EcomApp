@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { Platform, ModalController, MenuController, NavController } from '@ionic/angular';
+import { Platform, ModalController, MenuController, NavController, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ export class AppComponent {
     private statusBar    : StatusBar,
     public  modalCtrl    : ModalController,
     private menu         : MenuController,
-    public navCtrl       : NavController
+    public navCtrl       : NavController,
+    public alertCtrl     : AlertController,
+    public authService   : AuthService
   ) {
     this.sideMenu();
     this.initializeApp();
@@ -30,27 +33,40 @@ export class AppComponent {
     });
   }
 
-  sideMenu()
-  {
-    // this.navigate =
-    // [
-    //   {
-    //     title : "Home",
-    //     url   : "/tabs/tab1",
-    //     icon  : "home"
-    //   },
-    //   {
-    //     title : "Categories",
-    //     url   : "/tabs/tab2",
-    //     icon  : "apps"
-    //   },
-    //   {
-    //     title : "Contacts",
-    //     url   : "/tabs/tab3",
-    //     icon  : "contacts"
-    //   },
-    // ]
+  sideMenu() { 
+
   }
+
+  //logOut for user
+	async logOut() {
+		var self = this;
+		const alert = await self.alertCtrl.create({
+			header: 'Are you sure you want to logout ?',
+			buttons: [
+				{
+					text: 'Cancel',
+					role: 'cancel',
+					handler: (data) => {
+					}
+				},
+				{
+					text: 'Ok',
+					handler: (data) => {
+						//Remove the user storage via userTpe wise
+						self.authService.logOutFunction(function(isSucess){
+							if(isSucess){
+                 //Here we will logOut the user from the fireBase
+                self.authService.logout();
+                self.navCtrl.navigateRoot('tabs/tab1');
+                self.menu.close();
+							}
+						});
+					}
+				}
+			]
+		});
+		await alert.present();
+	}
 
   openHome() {
     this.navCtrl.navigateForward('tabs/tab1');

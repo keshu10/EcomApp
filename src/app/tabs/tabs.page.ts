@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatabaseService } from '../service/database.service';
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
+  
+  userDetails  : any;
+  localStorage : any;
 
-  constructor() {}
+  constructor(public databaseService : DatabaseService) {
+    this.localStorage = localStorage;
+    if(localStorage.email) {
+      this.getUserProfile();
+    }
+  }
+
+  getUserProfile() {
+    var self = this;
+    self.databaseService.getUser(function(user){
+      if(user) {
+        self.userDetails = user;
+        //console.log("user Details : " ,self.userDetails);
+      }
+    })
+  }
 
 }

@@ -44,3 +44,42 @@
   margin: 5px 0px 0 0;
 }
 
+.remove-line-item {
+  border-bottom   : 0px !important;
+}
+
+.my-custom-popover .popover-content {
+	width: 168px !important;
+}
+.popover-content {
+  top: 100px!important;
+  right: 50px!important;
+  width: 110px!important;
+}
+
+.aligncenter {
+  width: 100%;
+  text-align: center;
+
+}
+
+.box-size-order {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d7d7e2;
+  text-align: center;
+  margin: 3px 2px 6px 5px;
+}
+
+.padd {
+  padding: 15% 10px;
+}
+
+.badgecss {
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  border-radius: 50%;
+  width: 24px;
+  height: 18px;
+}

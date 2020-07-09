@@ -21,4 +21,8 @@ export class FilterProductPage implements OnInit {
     await this.modalController.dismiss();
   }
 
+  async clear() {
+    await this.modalController.dismiss();
+  }
+
 }

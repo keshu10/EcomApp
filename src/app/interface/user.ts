@@ -5,8 +5,8 @@ export class User {
     isAdmin  : false; // By default user will not be Admin
     isDeleted : false
     countryCode : number;
-    mobileNumber: number;
+    mobileNumber: any;
     address: string;
-    state:string;
-    city:string;
+    selectedUserState:string;
+    selectedUserCity:string;
 }

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      My Orders
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="padd">
+    <span class="aligncenter">
+      <p> Sadly, you haven't placed any orders till now. </p>
+    </span>
+    <p class="aligncenter">
+      <img src="/assets/icon/no-orders.png" alt="centered image" width="40%"/>
+    </p>
+    <div class="aligncenter">
+      <ion-button fill="outline" color="secondary" (click)="continueShopping()"> Continue Shopping </ion-button>
+    </div>
+  </div> -->
+  <span>
+    <ion-card (click)="openViewOrderDetail()">
+      <ion-row style="border-bottom: 1px solid #e0e0e0; background: #f0f8ff;">
+        <ion-col class="ion-align-self-center">
+          <div>
+            <span>Placed On:</span><br/>
+            <small>3/3/2020, 11:38 am</small>
+          </div>
+        </ion-col>
+        <ion-col size="5" class="ion-align-self-center">
+          <div color="dark" class="boldIt titleText top-right ion-text-center " style="text-align: right !important;">
+            <span>Order Id: #458217</span><br/>
+            <small class="fa fa-rupee">
+              5000
+            </small>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: 1px solid gray">
+        <ion-col size="3" class="ion-align-self-center">
+          <img src="assets/Mens/mens3.jpg">
+        </ion-col>
+        <ion-col size="7">
+          <ion-text>
+            <h6> Billion : Full Sleeve Ombre Men Sweatshirt </h6>
+          </ion-text>
+        </ion-col>
+        <ion-col size="2" class="ion-align-self-center ion-text-center">
+          <ion-icon name="arrow-dropright" style="font-size: 2em; color: #c1c4cd;"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span>
+            <div style="text-transform: capitalize;">
+              <small>ORDER STATUS:</small><br/>
+              <ion-label color="secondary">
+                SHIPPED
+              </ion-label>
+            </div>
+          </span>
+        </ion-col>
+        <ion-col>
+          <div class="boldIt titleText top-right ion-text-center " style="text-align: right !important;">
+            <small>DELIVERED ON:</small><br/>
+            <ion-label color="secondary">
+              8/3/2020, 05:30 pm
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </span>
+</ion-content>

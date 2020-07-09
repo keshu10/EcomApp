@@ -1,0 +1,58 @@
+.dropright {
+    display: none;
+}
+.dropdown {
+    transform: rotate(-90deg);
+}
+
+.show {
+    display: none;
+}
+
+.vertical-line {
+    height: 50px;
+    width: 10px;
+    margin-left: 25px;
+}
+.icon {
+    max-width: 60px;
+    margin: 0 auto;
+}
+.circleicongreen {
+    width: 60px;
+    background-color: #60bf79;
+    border-radius: 50%;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.circleiconwhite {
+    width: 60px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 1px solid grey;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.colmargin {
+    margin-top: 10px;
+}
+
+rating {
+	ion-icon {
+	color: gray;
+
+	&.filled {
+		color: #ffb400;
+	}
+  }
+}

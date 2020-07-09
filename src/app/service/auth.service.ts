@@ -20,21 +20,24 @@ export class AuthService {
         callback(true)
         console.log('Success!', value);
       })
-      .catch(err => {
+      .catch(error => {
         callback(false)
-        console.log('Something went wrong:',err.message);
+        console.log('Something went wrong:',error.message);
       });
   }
 
-  login(email: string, password: string) {
+  login(callback, objectEmail) {
     this.firebaseAuth
       .auth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(objectEmail.email, objectEmail.password)
       .then(value => {
+        
+        callback(true)
         console.log('Nice, it worked!', value);
       })
-      .catch(err => {
-        console.log('Something went wrong:',err.message);
+      .catch(error => {
+        callback(false,error)
+        console.log('Something went wrong:',error.message);
       });
   }
 
@@ -43,5 +46,16 @@ export class AuthService {
       .auth
       .signOut();
   }
+
+  //logOutFunction
+	logOutFunction(callback){
+    localStorage.removeItem("id");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("name");
+    localStorage.removeItem("phoneNumber");
+    localStorage.removeItem("email");
+    localStorage.removeItem("userIs");
+    callback(true);
+	}
 
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'view-cart',
-    loadChildren: () => import('./view-cart/view-cart.module').then( m => m.ViewCartPageModule)
+    loadChildren: () => import('./view-cart/view-cart.module').then( m => m.ViewCartPageModule),
+    canActivate:[AuthGuardService]
   },
   {
     path: 'check-out-order',
@@ -37,7 +39,36 @@ const routes: Routes = [
   {
     path: 'create-account',
     loadChildren: () => import('./create-account/create-account.module').then( m => m.CreateAccountPageModule)
+  },
+  {
+    path: 'myaddress',
+    loadChildren: () => import('./myaddress/myaddress.module').then( m => m.MyaddressPageModule)
+  },
+  {
+    path: 'add-new-address',
+    loadChildren: () => import('./add-new-address/add-new-address.module').then( m => m.AddNewAddressPageModule)
+  },
+  {
+    path: 'myorders',
+    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'view-order-details',
+    loadChildren: () => import('./view-order-details/view-order-details.module').then( m => m.ViewOrderDetailsPageModule)
+  },
+  {
+    path: 'notification',
+    loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./wishlist/wishlist.module').then( m => m.WishlistPageModule)
   }
+  
 ];
 @NgModule({
   imports: [
