@@ -19,9 +19,11 @@ import { RateReviewPageModule } from './rate-review/rate-review.module';
 import { IonicRatingModule }    from 'ionic4-rating';
 import { FilterProductPageModule } from './filter-product/filter-product.module';
 import { AuthService } from './service/auth.service';
+import { ResponsiveTableDirective } from './directives/responsive-table.directive';
+import { NumberonlyDirective } from './directives/numberonly.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ResponsiveTableDirective, NumberonlyDirective],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
